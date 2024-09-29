@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Outfit } from "next/font/google"
 
 import './globals.css';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -9,6 +10,13 @@ export const metadata: Metadata = {
   description: 'View all detailed information about SpaceX launches',
 };
 
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -16,12 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>
+      <body className={`${outfit.className} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
         >
           <div className="dark:hidden absolute top-0 -z-10 h-full w-full bg-white">
             <div className="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"></div>
