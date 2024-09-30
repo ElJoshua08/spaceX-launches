@@ -10,6 +10,8 @@ import {
 import { Button } from './ui/button';
 import { format } from 'date-fns';
 import Image from 'next/image';
+import { Separator } from './ui/separator';
+import { cn } from '@/lib/utils';
 
 export const Launches = ({
   launches,
@@ -50,12 +52,13 @@ const LaunchCard = ({ launch }: { launch: Launch }) => {
           </CardDescription>
         </div>
       </CardHeader>
-      <CardContent className="grow overflow-hidden">
-        <CardDescription className="max-w-[80ch] max-h-[5ch] text-ellipsis">
-          {launch.details}
+      <Separator className='mb-4' />
+      <CardContent className="grow overflow-hidden max-h-16">
+        <CardDescription className={cn("max-w-[45ch] text-ellipsis", {"text-primary/75": !launch.details})}>
+          {launch.details ? launch.details : 'No details available'}
         </CardDescription>
       </CardContent>
-      <CardFooter className="grow justify-end">
+      <CardFooter className="grow justify-end py-5">
         <Button>View Launch In Details</Button>
       </CardFooter>
     </Card>
