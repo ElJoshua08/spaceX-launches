@@ -30,12 +30,12 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         >
-          <div className="dark:hidden absolute top-0 -z-10 h-full w-full bg-white">
-            <div className="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"></div>
+          <div className="dark:hidden fixed top-0 -z-10 h-full w-full bg-white">
+            <div className="fixed bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(175,72,120,0.5)] opacity-50 blur-[80px]"></div>
           </div>
-          <div className="hidden dark:block absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]" />
+          <div className="hidden dark:block fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,rgba(175,72,120,0.5)_100%)]" />
           {children}
-          <div className="absolute bottom-4 left-4">
+          <div className="fixed bottom-4 left-4">
             <ThemeToggle />
           </div>
         </ThemeProvider>

@@ -1,4 +1,4 @@
-export interface Root {
+export interface Launch {
   fairings: null;
   links: Links;
   static_fire_date_utc: string;
