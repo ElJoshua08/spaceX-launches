@@ -1,16 +1,9 @@
-import { Launches } from "@/components/launches";
-import { Launch } from "@/interfaces";
-
-export default async function Home() {
-  const launches: Launch[] = await fetch('https://api.spacexdata.com/v5/launches').then(res => res.json());
-
+export default async function HomePage() {
   return (
-    <div className="flex flex-col h-screen w-full p-4 items-center justify-start">
-      <h1 className="text-6xl font-light">SpaceX Launches</h1>
-      {/* All launches */}
-      <section>
-        <Launches launches={launches} limitPerPage={15} />
-      </section>
-    </div>
+    <main className="flex flex-col w-full h-full px-4 py-1 items-center justify-start">
+      <h1 className="text-2xl font-medium">
+        <span className="text-3xl font-bold">SpaceX</span> Launches
+      </h1>
+    </main>
   );
 }
